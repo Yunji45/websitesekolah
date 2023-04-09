@@ -12,10 +12,13 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
-    {
-        $response = $this->get('/');
 
-        $response->assertStatus(200);
-    }
+     public function test_example()
+     {
+         $this->visit('/')
+              ->see('welcome')
+              ->dontSee('Rails');
+ 
+     }
+ 
 }

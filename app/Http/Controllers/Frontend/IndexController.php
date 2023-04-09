@@ -16,6 +16,7 @@ use App\Models\ProfileSekolah;
 use App\Models\User;
 use App\Models\Video;
 use App\Models\Visimisi;
+use App\Models\Alumni;
 
 class IndexController extends Controller
 {
@@ -156,6 +157,12 @@ class IndexController extends Controller
 
         $visimisi = Visimisi::first();
         return view('frontend.content.visimisi', compact('visimisi','jurusanM','kegiatanM','pengajar','footer'));
+    }
+
+    public function alumni()
+    {
+        $data = Alumni::all();
+        return view ('frontend.content.alumni', compact('data'));
     }
 
 }
